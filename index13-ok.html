@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem de Fundo Fixa</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/imagem_fundo.jpg') no-repeat left top;
+            background-size: cover;
+            z-index: -1;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            z-index: 10;
+        }
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+        }
+        .brand {
+            background: black;
+            color: gold;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+            margin-right: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        /* Estilos para o menu hambúrguer */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+        .menu.mobile {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        .menu.mobile a {
+            font-size: 1.5em;
+        }
+        .menu.active {
+            display: flex;
+        }
+
+        section {
+            padding: 200px 20px 100px; /* Ajuste para garantir espaçamento correto */
+            min-height: 100vh;
+        }
+        section[id] {
+            padding-top: 80px; /* Corrigido para garantir que o conteúdo não fique oculto pelo menu */
+        }
+        .produtos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .produto-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .produto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+        .botoes {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .botoes button {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .botoes button:hover {
+            background: rgba(255, 255, 255, 0.7);
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+            }
+            .logo {
+                height: 40px;
+            }
+            .menu {
+                display: none;
+            }
+            .menu-icon {
+                display: flex;
+            }
+            section {
+                padding-top: 250px; /* Ajuste para manter o conteúdo visível */
+            }
+            section[id] {
+            padding-top: 150px; /* Corrigido para garantir que o conteúdo não fique oculto pelo menu */
+        }
+            .produtos-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header class="header">
+        <img src="img/logo.jpg" alt="Logo" class="logo">
+        <div class="brand">Beatriz Goes</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <nav class="menu mobile">
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#produtos" onclick="closeMenu()">Produtos</a>
+            <a href="#sobre" onclick="closeMenu()">Sobre</a>
+            <a href="#contato" onclick="closeMenu()">Contato</a>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Home</h1>
+        <p>Bem-vindo à nossa página!</p>
+    </section>
+    <section id="produtos">
+        <h1>Produtos</h1>
+        <p>Confira nossos produtos incríveis.</p>
+        <div class="produtos-container">
+            <div class="produto-container">
+                <img src="img/produto1.jpg" alt="Produto 1">
+                <div class="botoes">
+                    <button>Comprar</button>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+            <div class="produto-container">
+                <img src="img/produto2.jpg" alt="Produto 2">
+                <div class="botoes">
+                    <button>Comprar</button>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+            <div class="produto-container">
+                <img src="img/produto3.jpg" alt="Produto 3">
+                <div class="botoes">
+                    <button>Comprar</button>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+            <div class="produto-container">
+                <img src="img/produto4.jpg" alt="Produto 4">
+                <div class="botoes">
+                    <button>Comprar</button>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sobre">
+        <h1>Sobre</h1>
+        <p>Saiba mais sobre nós.</p>
+    </section>
+    <section id="contato">
+        <h1>Contato</h1>
+        <p>Entre em contato conosco.</p>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu.mobile');
+            menu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.querySelector('.menu.mobile');
+            menu.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
