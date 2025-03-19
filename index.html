@@ -124,52 +124,6 @@
             display: block;
         }
         /* fim home normal*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* Responsividade para telas menores */
-        /* inicio home responsivo*/
-        @media (max-width: 768px) {
-        .home-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        /* trocar */
-        .home-column {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-        }
-        .home-column p {
-            max-width: 90%;
-        }
-
-        .imagem-home {
-                max-width: 100%; /* Ajuste total para telas pequenas */
-            }
-        }
-
-            /* fim home*/
-
         .produtos-container {
             display: flex;
             flex-wrap: wrap;
@@ -191,16 +145,17 @@
         .produto-container img {
             width: 100%;  /* A imagem preencherá toda a largura do contêiner */
             /*height: auto%;*/
-            height: 100%; /* A altura será ajustada automaticamente para manter a proporção */
+            height: auto; /* A altura será ajustada automaticamente para manter a proporção */
             /*object-fit: contain;*/
-            object-fit: contain; /* Garante que a imagem será ajustada sem cortar, mantendo a proporção */
+            object-fit: cover; /* Garante que a imagem será ajustada sem cortar, mantendo a proporção */
             display: block;
-            border-radius: 10px; /* Mantém o arredondamento nas bordas da imagem */
+            border-radius: 15px; /* Mantém o arredondamento nas bordas da imagem */
+            
         }
 
         .botoes {
             position: absolute;
-            bottom: 10px;
+            bottom: 60px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -297,11 +252,62 @@
 
         .social-links a:hover {
             text-decoration: underline;
+        }        
+
+       /* Responsividade para telas menores */
+        /* inicio home responsivo*/
+        @media (max-width: 768px) {
+        .home-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            display: flex; /*beer*/
+            flex-wrap: wrap;/*beer*/
+            gap: 20px;/*beer*/
         }
 
+ 
+        
+        .home-column {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            /*beer inicio*/    
+            min-width: 300px; /* Evita que os textos fiquem muito estreitos */
+            max-width: 600px; /* Para não ficar muito largo */
+            padding: 15px;
+            /*background: #f9f9f9;*/
+            border-radius: 10px;
+            /*beer fim*/
+
+        }
+         /*beer inicio*/     
+        h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6; /* Maior espaçamento entre as linhas */
+            font-size: 1.1rem;
+}
+        /*beer fim*/
+
+        .home-column p {
+            max-width: 90%;
+        }
+
+        .imagem-home {
+                max-width: 100%; /* Ajuste total para telas pequenas */
+            }
+               /* fim home*/
+
         /* Modo Responsivo - Colunas do footer alinhadas verticalmente em telas pequenas */
-        @media (max-width: 768px) {
-          
+                 
             .header {
                 flex-direction: column;
                 align-items: center;
@@ -392,12 +398,34 @@
         <div class="home-container">
             <!-- Parágrafo 10 à esquerda -->
             <div class="home-column">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quas deserunt rem neque minima saepe aut, consectetur accusamus cum sapiente suscipit, nihil excepturi aliquam beatae ratione. Non harum dicta earum error sunt enim, sapiente nisi unde ratione incidunt officiis blanditiis aspernatur repellendus consequuntur magnam, cum laudantium, quae minima quam assumenda. Voluptates eveniet laudantium, quia in cumque saepe. Aspernatur, nulla voluptatem? Rerum, fugit quae iste, repellat adipisci, harum eligendi corrupti aut ut quibusdam vel officia asperiores nesciunt illum dolorum vitae magni tempore ipsa a recusandae voluptatum dignissimos! Expedita aliquam totam, aperiam quo, impedit fugit asperiores in omnis eveniet dolore, ab quaerat accusamus reiciendis ea distinctio harum consequuntur voluptas tenetur quam sequi a excepturi officiis labore veniam. Nulla consectetur, debitis rem id minus dolores, animi autem saepe sunt nihil deleniti quibusdam earum vitae. Aliquid deserunt fugit beatae eaque, nesciunt rerum voluptatem quis quaerat eius facere ab, possimus dolorem suscipit quas? Veritatis officiis culpa asperiores, nihil natus et repellendus nobis veniam impedit sint quia temporibus. Laborum distinctio corporis dolorem nobis? Aspernatur assumenda ullam odio sapiente amet eum ducimus, voluptatum tenetur mollitia soluta repellendus provident perspiciatis, consectetur vero. Nemo quisquam quo ab quos corrupti, reiciendis alias, voluptate mollitia sit, soluta deserunt libero? </p>
+                <h2>Especialização em Rotina Oriental</h2>
+                </br>
+                <h4>EM JUNHO…2k25 ✨</h4>  
+                </br>                  
+                    <p>Especialização em <strong>Rotina Oriental</strong> para bailarinas e professoras de Dança do Ventre.💙</p>
+                    </br>
+                    <p>Agora você pode se especializar no estilo queridinho da Dança do Ventre no Brasil e no mundo: a Rotina Oriental.</p> 
+                    </br>
+                    <p>Conhecido por sua complexidade e alto nível de exigência, este estilo desafia a bailarina a encontrar versatilidade em múltiplos ritmos, humores e dinâmicas musicais. </p>
+                    </br>
+                    <p>Na Especialização você aprenderá caminhos para desenvolver a Rotina Oriental na vertente improvisada e também coreografada, além de mergulhar nas possibilidades que cada um dos ritmos árabes abordados pedem da bailarina em cena.</p>
+                    </br>
+                    <p>Dentro deste Curso você irá desenvolver sua dança de forma completa, visto que o estilo transita por tantos lugares, humores e técnicas diferentes. </p>
+                    </br>
+                     </p>
             </div>
             
             <!-- Parágrafo 11 ao centro -->
             <div class="home-column">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, eum nulla. Dignissimos magnam laboriosam officiis aperiam, dicta harum molestiae autem illum quos vitae itaque quisquam explicabo laborum amet, impedit adipisci nam maxime totam labore natus iste eveniet. Perspiciatis incidunt delectus praesentium et sunt eveniet dolores! Error necessitatibus officiis, nulla dolor odio tenetur eligendi ex doloribus distinctio nesciunt ullam dolore aperiam molestias iure repudiandae, minus saepe tempora explicabo repellat hic vero exercitationem. Nemo aliquid ducimus iusto sapiente! Veniam ducimus animi provident assumenda ad rerum nulla rem incidunt iure ipsa laboriosam officiis molestias tempore laudantium odit impedit magni est dicta, nam modi? Hic omnis inventore repudiandae </p>
+                <h2>Formato do Curso</h2>
+            </br>
+                <p>Serão 10 encontros on-line, 2 domingos por mês de junho à outubro. </p>
+            </br>
+                 <p>Chegou o momento de levar a sua dança e sua consciência para o próximo nível. 💙</p>
+                </br>  
+                  <p>  🎁 Inscrições realizadas até 30 de março terão 5% de desconto no valor total do Curso.</p>
+                </br>
+                <p>Seja muito bem-vinda! 💙</p> 
             </div>
             
             <!-- Imagem à direita -->
